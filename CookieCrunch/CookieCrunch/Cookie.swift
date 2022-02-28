@@ -63,17 +63,16 @@ class Cookie: CustomStringConvertible, Hashable {
   
   func hash(into hasher: inout Hasher) {
     hasher.combine(row * 10 + column)
-    }
+  }
   
   static func ==(lhs: Cookie, rhs: Cookie) -> Bool {
     return lhs.column == rhs.column && lhs.row == rhs.row
-    
   }
   
   var description: String {
     return "type:\(cookieType) square:(\(column),\(row))"
   }
-  
+    
   var column: Int
   var row: Int
   let cookieType: CookieType
